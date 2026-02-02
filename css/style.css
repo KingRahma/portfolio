@@ -2330,3 +2330,685 @@ body.dark-mode .youtube-card:hover {
 .youtube-thumbnail img.loaded {
     opacity: 1;
 }
+
+/* ========== GRAPHIC DESIGN SLIDER STYLES ========== */
+
+.graphic-design-slider {
+    background-color: var(--light-card);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+body.dark-mode .graphic-design-slider {
+    background-color: var(--dark-card);
+}
+
+.slider-container {
+    position: relative;
+    min-height: 30%;
+    overflow: hidden;
+}
+
+.design-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.design-slide.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.design-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.design-preview img{
+    height: 100%;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: float 6s ease-in-out infinite;
+}
+
+.design-mockup {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: float 6s ease-in-out infinite;
+}
+
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotateX(0deg); }
+    50% { transform: translateY(-10px) rotateX(5deg); }
+}
+
+/* Business Card Mockup */
+.business-card-mockup {
+    width: 350px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.business-card-mockup .mockup-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), #006c8e);
+    border-radius: 8px;
+    padding: 25px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-front::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.card-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-family: 'Courier Prime', monospace;
+}
+
+.card-front h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.card-front > p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    width: 100%;
+}
+
+.contact-info p {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+}
+
+/* Flyer Mockup */
+.flyer-mockup {
+    width: 280px;
+    height: 380px;
+    background: linear-gradient(135deg, #1a237e, #283593);
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.flyer-mockup::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, var(--secondary-color), #e6b95a);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.flyer-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.flyer-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.event-date {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.flyer-body {
+    position: relative;
+    z-index: 1;
+}
+
+.highlight-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.highlight-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.flyer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.detail-item i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+/* Postal Mockup */
+.postal-mockup {
+    width: 300px;
+    height: 420px;
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.postal-mockup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--primary-color) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+
+.postal-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.company-logo {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 15px;
+    font-family: 'Courier Prime', monospace;
+}
+
+.postal-header h2 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.postal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.address-section, .contact-section {
+    padding: 15px;
+    background: rgba(0, 78, 100, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.address-section h3, .contact-section h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.address-section p, .contact-section p {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    line-height: 1.5;
+}
+
+body.dark-mode .address-section p,
+body.dark-mode .contact-section p {
+    color: var(--dark-text);
+}
+
+/* Business Postal Mockup */
+.business-postal-mockup {
+    width: 380px;
+    height: 170px;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.business-postal-mockup::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(202, 142, 72, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.business-postal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.brand-logo i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.postal-stamp {
+    background: var(--secondary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.business-postal-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.recipient-info, .sender-info {
+    flex: 1;
+}
+
+.recipient-info h3, .sender-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.recipient-info p, .sender-info p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* Design Info */
+.design-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.design-info h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+body.dark-mode .design-info h3 {
+    color: var(--secondary-color);
+}
+
+.design-info > p {
+    color: var(--light-text);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+body.dark-mode .design-info > p {
+    color: var(--dark-text);
+}
+
+.design-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.design-specs span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+body.dark-mode .design-specs span {
+    color: var(--dark-text);
+}
+
+.design-specs i {
+    color: var(--secondary-color);
+    width: 20px;
+}
+
+.design-specs strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+body.dark-mode .design-specs strong {
+    color: var(--secondary-color);
+}
+
+/* Slider Navigation */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.slider-prev, .slider-next {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+
+body.dark-mode .slider-prev,
+body.dark-mode .slider-next {
+    background: var(--secondary-color);
+}
+
+.slider-prev:hover, .slider-next:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+body.dark-mode .slider-prev:hover,
+body.dark-mode .slider-next:hover {
+    background: var(--primary-color);
+}
+
+.slider-dots {
+    display: flex;
+    gap: 15px;
+}
+
+.design-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+body.dark-mode .design-dot {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.design-dot.active {
+    background-color: var(--secondary-color);
+    transform: scale(1.3);
+}
+
+body.dark-mode .design-dot.active {
+    background-color: var(--primary-color);
+}
+
+.design-dot:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Download Button */
+.design-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.design-download-btn i {
+    font-size: 1.1rem;
+}
+
+/* Responsive Design for Graphic Slider */
+@media (max-width: 992px) {
+    .design-slide {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .design-preview, .design-info {
+        width: 100%;
+    }
+    
+    .design-info {
+        padding: 20px 0;
+    }
+    
+    .design-specs {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .business-card-mockup,
+    .flyer-mockup,
+    .postal-mockup,
+    .business-postal-mockup {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 768px) {
+    .graphic-design-slider {
+        padding: 25px;
+    }
+    
+    .design-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .slider-nav {
+        gap: 20px;
+    }
+    
+    .slider-prev, .slider-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .business-card-mockup {
+        width: 300px;
+        height: 170px;
+    }
+    
+    .flyer-mockup {
+        width: 240px;
+        height: 330px;
+    }
+    
+    .postal-mockup {
+        width: 260px;
+        height: 370px;
+        padding: 20px;
+    }
+    
+    .business-postal-mockup {
+        width: 320px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .graphic-design-slider {
+        padding: 20px;
+    }
+    
+    .design-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .design-specs span {
+        font-size: 0.85rem;
+    }
+    
+    .business-card-mockup {
+        width: 250px;
+        height: 140px;
+        padding: 15px;
+    }
+    
+    .card-logo {
+        font-size: 2rem;
+    }
+    
+    .card-front h3 {
+        font-size: 1rem;
+    }
+    
+    .card-front > p {
+        font-size: 0.8rem;
+    }
+    
+    .contact-info p {
+        font-size: 0.7rem;
+    }
+    
+    .flyer-mockup {
+        width: 200px;
+        height: 280px;
+        padding: 15px;
+    }
+    
+    .flyer-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .highlight-box {
+        padding: 15px;
+    }
+    
+    .highlight-box h3 {
+        font-size: 1rem;
+    }
+    
+    .postal-mockup {
+        width: 220px;
+        height: 320px;
+        padding: 15px;
+    }
+    
+    .business-postal-mockup {
+        width: 270px;
+        height: 130px;
+        padding: 15px;
+    }
+}
