@@ -260,27 +260,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Update YouTube video stats (2 videos now)
-    function updateYouTubeStats() {
-        const videoCards = document.querySelectorAll('.youtube-card');
+     // Update YouTube video stats (Now 4 videos)
+    // ... existing code ...
+
+// Update YouTube video stats (Now 4 videos)
+function updateYouTubeStats() {
+    const videoCards = document.querySelectorAll('.youtube-card');
+    
+    videoCards.forEach((card, index) => {
+        // Updated view counts for 4 videos
+        const baseViews = [15000, 28000, 42000, 36000];
+        const baseDates = ['2 months ago', '3 months ago', '1 month ago', '2 weeks ago'];
         
-        videoCards.forEach((card, index) => {
-            // Updated view counts for 2 videos
-            const baseViews = [15000, 28000];
-            const baseDates = ['2 months ago', '3 months ago'];
-            
-            const viewsElement = card.querySelector('.video-stats span:first-child');
-            const dateElement = card.querySelector('.video-stats span:last-child');
-            
-            if (viewsElement && index < baseViews.length) {
-                viewsElement.innerHTML = `<i class="fas fa-eye"></i> ${formatNumber(baseViews[index])} views`;
-            }
-            
-            if (dateElement && index < baseDates.length) {
-                dateElement.innerHTML = `<i class="far fa-calendar"></i> ${baseDates[index]}`;
-            }
-        });
-    }
+        const viewsElement = card.querySelector('.video-stats span:first-child');
+        const dateElement = card.querySelector('.video-stats span:last-child');
+        
+        if (viewsElement && index < baseViews.length) {
+            viewsElement.innerHTML = `<i class="fas fa-eye"></i> ${formatNumber(baseViews[index])} views`;
+        }
+        
+        if (dateElement && index < baseDates.length) {
+            dateElement.innerHTML = `<i class="far fa-calendar"></i> ${baseDates[index]}`;
+        }
+    });
+}
+
+// ... rest of existing code ...
     
     // Helper function to format numbers
     function formatNumber(num) {
