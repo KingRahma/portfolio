@@ -3012,3 +3012,41 @@ body.dark-mode .design-dot.active {
         padding: 15px;
     }
 }
+
+/* Responsive Blog Styles */
+@media (max-width: 768px) {
+    .blog-hero h1 {
+        font-size: 2.2rem;
+    }
+    .blog-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .blog-author-bio {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    .author-social {
+        justify-content: center;
+    }
+    .blog-content h2 {
+        font-size: 1.8rem;
+    }
+    .blog-content blockquote {
+        padding: 20px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-hero h1 {
+        font-size: 1.8rem;
+    }
+    .blog-intro {
+        font-size: 1.1rem;
+    }
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
